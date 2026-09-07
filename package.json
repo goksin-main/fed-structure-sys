@@ -16,9 +16,12 @@
     "typecheck": "pnpm --filter web typecheck",
     "check": "pnpm lint && pnpm typecheck && pnpm build",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^17.5.0",
     "prettier": "^3.9.6"
   }
 }
