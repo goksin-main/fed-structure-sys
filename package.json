@@ -12,6 +12,8 @@
     "dev": "pnpm --filter web dev",
     "build": "pnpm --filter web build",
     "preview": "pnpm --filter web preview",
-    "check": "pnpm -r --if-present check"
+    "lint": "pnpm --filter web lint",
+    "typecheck": "pnpm --filter web typecheck",
+    "check": "pnpm lint && pnpm typecheck && pnpm build"
   }
 }
