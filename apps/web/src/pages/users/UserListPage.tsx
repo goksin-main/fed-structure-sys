@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router"
 
 import type { UserListScenario } from "@/entities/user"
 import { getUsers } from "@/entities/user"
-import { PageTitle } from "@/shared/ui"
+import { PageTitle, UserStatusBadge } from "@/shared/ui"
 
 function readScenario(value: string | null): UserListScenario {
   if (value === "empty" || value === "error") {
@@ -28,33 +28,81 @@ export function UserListPage() {
     <main>
       <PageTitle title="用户" subtitle="Users are loaded through the shared request layer." />
 
-      <nav aria-label="User list scenarios">
-        <Link to="/users">成功</Link> <Link to="/users?scenario=empty">数据为空</Link>{" "}
-        <Link to="/users?scenario=error">错误</Link>
-      </nav>
+      <section className="rounded-[--radius-card] border border-surface-100 bg-white p-6 shadow-sm">
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+          {/* 模拟了三个场景：成功、数据为空、错误 */}
+          {/* 通过传递不同的 URL 查询参数来实现 */}
+          <nav aria-label="用户列表场景" className="flex flex-wrap items-center gap-2">
+            <Link
+              className="rounded-md bg-brand-600 px-3 py-2 text-sm font-medium text-white"
+              to="/users"
+            >
+              成功
+            </Link>
 
-      {usersQuery.isPending ? <p>加载用户列表中...</p> : null}
+            <Link
+              className="rounded-md bg-surface-100 px-3 py-2 text-sm font-medium text-surface-900"
+              to="/users?scenario=empty"
+            >
+              数据为空
+            </Link>
 
-      {usersQuery.isError ? (
-        <section>
-          <p>加载用户列表失败</p>
-          <button type="button" onClick={() => usersQuery.refetch()}>
-            重试
-          </button>
-        </section>
-      ) : null}
+            <Link
+              className="rounded-md bg-surface-100 px-3 py-2 text-sm font-medium text-surface-900"
+              to="/users?scenario=error"
+            >
+              错误
+            </Link>
+          </nav>
+        </div>
 
-      {usersQuery.isSuccess && usersQuery.data.length === 0 ? <p>未找到相关用户</p> : null}
+        {/* 根据 usersQuery 的不同状态，渲染不同的页面内容 */}
 
-      {usersQuery.isSuccess && usersQuery.data.length > 0 ? (
-        <ul>
-          {usersQuery.data.map((user) => (
-            <li key={user.id}>
-              <strong>{user.name}</strong> - {user.email} - {user.role} - {user.status}
-            </li>
-          ))}
-        </ul>
-      ) : null}
+        {usersQuery.isPending ? (
+          <p className="rounded-md bg-surface-100 p-4 text-sm text-surface-900/70">
+            加载用户列表中...
+          </p>
+        ) : null}
+
+        {usersQuery.isError ? (
+          <section className="rounded-md bg-danger-50 p-4 text-sm text-danger-700">
+            <p>加载用户列表失败</p>
+
+            <button
+              className="mt-3 rounded-md bg-danger-700 px-3 py-2 text-sm font-medium text-white"
+              type="button"
+              onClick={() => usersQuery.refetch()}
+            >
+              重试
+            </button>
+          </section>
+        ) : null}
+
+        {usersQuery.isSuccess && usersQuery.data.length === 0 ? (
+          <p className="rounded-md bg-surface-100 p-4 text-sm text-surface-900/70">
+            未找到相关用户
+          </p>
+        ) : null}
+
+        {usersQuery.isSuccess && usersQuery.data.length > 0 ? (
+          <ul className="divide-y divide-surface-100">
+            {usersQuery.data.map((user) => (
+              <li
+                className="grid gap-2 py-4 text-sm md:grid-cols-[1fr_1.5fr_auto_auto] md:items-center"
+                key={user.id}
+              >
+                <strong className="font-medium text-surface-900">{user.name}</strong>
+
+                <span className="text-surface-900/70">{user.email}</span>
+
+                <span className="text-surface-900/70">{user.role}</span>
+
+                <UserStatusBadge status={user.status} />
+              </li>
+            ))}
+          </ul>
+        ) : null}
+      </section>
     </main>
   )
 }
