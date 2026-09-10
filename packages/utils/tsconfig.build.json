@@ -1,0 +1,10 @@
+{
+  "extends": "@fed-structure-sys/ts-config/base.json",
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": ["src"]
+}
