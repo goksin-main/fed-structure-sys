@@ -1,4 +1,4 @@
-import { PageTitle } from "@/shared/ui"
+import { PageTitle } from "@fed-structure-sys/ui"
 import { Link } from "react-router"
 
 export function NotFoundPage() {

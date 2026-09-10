@@ -1,6 +1,6 @@
 import type { UserStatus } from "../model"
 
-import { Badge } from "@/shared/ui"
+import { Badge } from "@fed-structure-sys/ui"
 
 type UserStatusBadgeProps = {
   status: UserStatus

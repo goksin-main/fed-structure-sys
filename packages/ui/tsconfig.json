@@ -1,0 +1,4 @@
+{
+  "extends": "@fed-structure-sys/ts-config/react-app.json",
+  "include": ["src"]
+}

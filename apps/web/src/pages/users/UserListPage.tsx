@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router"
 
 import type { UserListScenario } from "@/entities/user"
 import { getUsers, UserStatusBadge } from "@/entities/user"
-import { Button, Card, getButtonClassName, PageTitle } from "@/shared/ui"
+import { Button, Card, getButtonClassName, PageTitle } from "@fed-structure-sys/ui"
 
 function readScenario(value: string | null): UserListScenario {
   if (value === "empty" || value === "error") {

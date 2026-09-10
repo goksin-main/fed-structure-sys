@@ -1,4 +1,4 @@
-import { Card, PageTitle } from "@/shared/ui"
+import { Card, PageTitle } from "@fed-structure-sys/ui"
 
 export function HomePage() {
   return (
