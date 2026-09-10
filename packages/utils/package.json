@@ -1,6 +1,6 @@
 {
   "name": "@fed-structure-sys/utils",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shared utility functions for frontend-engineering-system.",
   "license": "MIT",
   "private": false,

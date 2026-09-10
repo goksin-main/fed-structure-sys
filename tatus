@@ -1,0 +1,37 @@
+warning: in the working copy of '.changeset/config.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'packages/utils/package.json', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/.changeset/chilly-turtles-pick.md b/.changeset/chilly-turtles-pick.md[m
+[1mdeleted file mode 100644[m
+[1mindex 3dde951..0000000[m
+[1m--- a/.changeset/chilly-turtles-pick.md[m
+[1m+++ /dev/null[m
+[36m@@ -1,5 +0,0 @@[m
+[31m----[m
+[31m-"@fed-structure-sys/utils": minor[m
+[31m----[m
+[31m-[m
+[31m-新增了 sleep 工具函数[m
+[1mdiff --git a/.changeset/config.json b/.changeset/config.json[m
+[1mindex d176c6a..f110229 100644[m
+[1m--- a/.changeset/config.json[m
+[1m+++ b/.changeset/config.json[m
+[36m@@ -1,6 +1,6 @@[m
+ {[m
+   "$schema": "https://unpkg.com/@changesets/config@4.0.0/schema.json",[m
+[31m-  "baseBranch": "main",[m
+[32m+[m[32m  "baseBranch": "master",[m
+   "access": "public",[m
+   "format": "auto",[m
+   "changelog": "@changesets/cli/changelog",[m
+[1mdiff --git a/packages/utils/package.json b/packages/utils/package.json[m
+[1mindex d2336e4..ee82e28 100644[m
+[1m--- a/packages/utils/package.json[m
+[1m+++ b/packages/utils/package.json[m
+[36m@@ -1,6 +1,6 @@[m
+ {[m
+   "name": "@fed-structure-sys/utils",[m
+[31m-  "version": "0.1.0",[m
+[32m+[m[32m  "version": "0.2.0",[m
+   "description": "Shared utility functions for frontend-engineering-system.",[m
+   "license": "MIT",[m
+   "private": false,[m
