@@ -1,0 +1,7 @@
+{
+  "extends": "@fed-structure-sys/ts-config/base.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": ["src"]
+}
