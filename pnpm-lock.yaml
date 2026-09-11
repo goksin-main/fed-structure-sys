@@ -124,13 +124,6 @@ importers:
   packages/ts-config: {}
 
   packages/ui:
-    dependencies:
-      react:
-        specifier: ^19.2.7
-        version: 19.2.8
-      react-dom:
-        specifier: ^19.2.7
-        version: 19.2.8(react@19.2.8)
     devDependencies:
       '@fed-structure-sys/eslint-config':
         specifier: workspace:*
@@ -150,12 +143,21 @@ importers:
       '@types/react-dom':
         specifier: ^19.2.3
         version: 19.2.7(@types/react@19.2.18)
+      '@vitejs/plugin-react':
+        specifier: ^6.1.1
+        version: 6.1.1(vite@8.2.2(@types/node@24.13.3)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
       eslint:
         specifier: ^10.6.0
         version: 10.10.0(jiti@2.7.0)
       eslint-plugin-storybook:
         specifier: ^10.6.0
         version: 10.6.0(eslint@10.10.0(jiti@2.7.0))(typescript@6.0.3)
+      react:
+        specifier: ^19.2.8
+        version: 19.2.8
+      react-dom:
+        specifier: ^19.2.8
+        version: 19.2.8(react@19.2.8)
       storybook:
         specifier: ^10.6.0
         version: 10.6.0(@types/react@19.2.18)(prettier@3.9.6)(react@19.2.8)
@@ -165,6 +167,9 @@ importers:
       typescript:
         specifier: ~6.0.2
         version: 6.0.3
+      vite:
+        specifier: ^8.2.2
+        version: 8.2.2(@types/node@24.13.3)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0)
 
   packages/utils:
     devDependencies:
