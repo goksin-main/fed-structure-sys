@@ -17,7 +17,7 @@
     "typecheck": "pnpm -r --if-present run typecheck",
     "test:unit": "pnpm -r --if-present run test:unit",
     "test:unit:coverage": "pnpm -r --if-present run test:unit:coverage",
-    "check": "pnpm lint && pnpm typecheck && pnpm test:unit && pnpm build",
+    "check": "pnpm lint && pnpm typecheck && pnpm test:unit && pnpm test:component && pnpm build",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "husky",
