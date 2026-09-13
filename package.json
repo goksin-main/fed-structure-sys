@@ -17,6 +17,10 @@
     "typecheck": "pnpm -r --if-present run typecheck",
     "test:unit": "pnpm -r --if-present run test:unit",
     "test:unit:coverage": "pnpm -r --if-present run test:unit:coverage",
+    "dev:e2e": "pnpm --filter @frontend-engineering-system2/ui build && pnpm --filter web dev --host 127.0.0.1 --port 4173 --strictPort --mode e2e",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:report": "playwright show-report",
     "check": "pnpm lint && pnpm typecheck && pnpm test:unit && pnpm test:component && pnpm test:integration && pnpm build",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -29,6 +33,7 @@
     "@changesets/cli": "^3.0.2",
     "@commitlint/cli": "^21.2.2",
     "@commitlint/config-conventional": "^21.2.2",
+    "@playwright/test": "^1.63.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.5.0",
     "prettier": "^3.9.6"
