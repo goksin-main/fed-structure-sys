@@ -17,6 +17,8 @@
     "lint": "pnpm -r --if-present run lint",
     "typecheck": "pnpm -r --if-present run typecheck",
     "test:unit": "pnpm -r --if-present run test:unit",
+    "test:integration": "pnpm -r --if-present run test:integration",
+    "test:component": "pnpm -r --if-present run test:component",
     "test:unit:coverage": "pnpm -r --if-present run test:unit:coverage",
     "dev:e2e": "pnpm --filter @fed-structure-sys/ui build && pnpm --filter web dev --host 127.0.0.1 --port 4173 --strictPort --mode e2e",
     "test:e2e": "playwright test",
