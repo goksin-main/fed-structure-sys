@@ -13,6 +13,7 @@
     "build": "pnpm --filter web build",
     "build:staging": "pnpm --filter web build:staging",
     "build:dependencies": "pnpm --filter @fed-structure-sys/utils build && pnpm --filter @fed-structure-sys/ui build",
+    "build:deploy": "pnpm build:dependencies && pnpm build",
     "preview": "pnpm --filter web preview",
     "lint": "pnpm -r --if-present run lint",
     "typecheck": "pnpm -r --if-present run typecheck",
